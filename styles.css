@@ -20,7 +20,8 @@ a {
     text-decoration: none;
 }
 
-h1, h2 {
+h1,
+h2 {
     margin: 0;
     font-weight: 400;
 }
@@ -32,11 +33,15 @@ ul {
 }
 
 #container {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
     max-width: 1200px;
-    min-width: 900px;
     margin: 0 auto;
-    padding: 0 50px;
+    padding: 0 1rem;
 }
+
+/* header */
 
 header {
     padding-top: 1.5rem;
@@ -47,12 +52,12 @@ h1 {
     position: relative;
     font-family: "Bodoni Moda", serif;
     font-weight: 500;
-    font-size: 4rem;
-    line-height: 0.9;
+    font-size: 2.25rem;
+    line-height: 0.95;
     letter-spacing: -0.05em;
     text-transform: uppercase;
     color: #e9f7ff;
-    text-shadow: -3px 0 #ff4fc3, 3px 0 #3fe3ff, 0 0 2rem rgba(101, 59, 255, 0.5);
+    text-shadow: -2px 0 #ff4fc3, 2px 0 #3fe3ff, 0 0 1.5rem rgba(101, 59, 255, 0.5);
     animation: rise 1.2s cubic-bezier(0.16, 1, 0.3, 1) both;
 }
 
@@ -81,11 +86,14 @@ h1::after {
 header h2 {
     margin: 0.9rem 0 1rem;
     font-family: "Unbounded", sans-serif;
-    font-size: 0.85rem;
-    letter-spacing: 0.1em;
+    font-size: 0.65rem;
+    line-height: 1.6;
+    letter-spacing: 0.06em;
     text-transform: uppercase;
     color: #b9ff39;
 }
+
+/* banner */
 
 #banner {
     position: relative;
@@ -93,11 +101,11 @@ header h2 {
     display: flex;
     justify-content: center;
     align-items: flex-end;
-    gap: 1rem;
-    width: 1100px;
-    max-width: 100%;
-    height: 250px;
-    margin: 0 auto;
+    gap: 0.5rem;
+    max-width: 1100px;
+    height: 190px;
+    margin: 0 auto 1rem;
+    padding: 0 0.75rem;
     border: 1px solid rgba(255, 242, 57, 0.3);
     background:
         linear-gradient(0deg, rgba(236, 15, 107, 0.274), transparent 60%),
@@ -108,11 +116,12 @@ header h2 {
     position: relative;
     overflow: hidden;
     z-index: 1;
-    width: 190px;
-    height: 160px;
+    flex: 1 1 0;
+    max-width: 190px;
+    height: 100px;
     border: 1px solid rgba(185, 255, 57, 0.55);
     border-bottom: 0;
-    border-radius: 95px 95px 0 0;
+    border-radius: 999px 999px 0 0;
     background: linear-gradient(180deg, rgba(101, 59, 255, 0.6), rgba(5, 3, 8, 0.95));
     box-shadow: 0 0 2rem rgba(101, 59, 255, 0.35);
     cursor: pointer;
@@ -124,43 +133,44 @@ header h2 {
     position: absolute;
     bottom: 0;
     left: 0;
-    width: 602px;
+    width: calc(300% + 1rem);
     max-width: none;
-    height: 230px;
+    height: 140px;
     object-fit: cover;
     filter: grayscale(1) sepia(1) hue-rotate(205deg) saturate(6) brightness(0.62) contrast(1.3);
 }
 
 .tall {
-    height: 230px;
+    height: 140px;
     animation-delay: 120ms;
 }
+
 .tall img {
-    left: -206px;
+    left: calc(-100% - 0.5rem);
 }
 
 .last img {
-    left: -412px;
+    left: calc(-200% - 1rem);
 }
 
 .arch::after {
     content: "";
     position: absolute;
-    top: 12px;
-    left: 12px;
-    right: 12px;
+    top: 8px;
+    left: 8px;
+    right: 8px;
     bottom: 0;
     border: 1px solid rgba(255, 79, 195, 0.5);
     border-bottom: 0;
-    border-radius: 80px 80px 0 0;
+    border-radius: 999px 999px 0 0;
 }
 
 .moon {
     position: absolute;
-    top: 40px;
-    left: 12%;
-    width: 70px;
-    height: 70px;
+    top: 24px;
+    left: 8%;
+    width: 44px;
+    height: 44px;
     border-radius: 50%;
     background: #e9f7ff;
     box-shadow: 0 0 2rem rgba(233, 247, 255, 0.6);
@@ -169,10 +179,10 @@ header h2 {
 
 .ring {
     position: absolute;
-    top: 15px;
-    left: -25px;
-    width: 120px;
-    height: 40px;
+    top: 10px;
+    left: -16px;
+    width: 76px;
+    height: 26px;
     border: 1px solid #e9f7ff;
     border-radius: 50%;
     animation: spin 8s linear infinite;
@@ -180,10 +190,10 @@ header h2 {
 
 .star {
     position: absolute;
-    top: 40px;
-    right: 14%;
-    width: 14px;
-    height: 14px;
+    top: 24px;
+    right: 10%;
+    width: 10px;
+    height: 10px;
     background: #b9ff39;
     box-shadow: 0 0 1rem #b9ff39;
     transform: rotate(45deg);
@@ -191,38 +201,50 @@ header h2 {
 }
 
 main {
-    display: flex;
+    display: grid;
+    grid-template-columns: 1fr;
     gap: 1.5rem;
-    padding: 1.5rem 0 1rem;
     flex: 1;
-    padding-top: 0.75rem;
+    padding: 1.5rem 0;
     border-top: 1px solid rgba(238, 233, 225, 0.25);
+}
+
+main section {
+    padding-left: 1rem;
+    border-left: 3px solid #ff2667;
 }
 
 main h2 {
     margin-bottom: 0.5rem;
     font-family: "Cormorant Garamond", serif;
     font-style: italic;
-    font-size: 2.2rem;
+    font-size: 2rem;
     color: #ff2667;
     text-shadow: 0 0 1.5rem rgba(255, 0, 85, 0.842);
 }
 
 li a {
     display: block;
-    padding: 0.4rem 0;
+    padding: 0.75rem 0;
     border-bottom: 1px solid rgba(238, 233, 225, 0.2);
-    transition: transform 250ms, color 250ms;
+    transition: transform 250ms, color 250ms, border-color 250ms;
 }
 
-li a:hover {
+li a:active,
+li a:focus-visible {
     transform: translateX(0.5rem);
     color: #39fff5;
+    border-color: #39fff5;
+    outline: none;
 }
+
+/*  footer  */
 
 footer {
     display: flex;
-    justify-content: space-between;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
     padding: 1rem 0 1.5rem;
     border-top: 1px solid rgba(238, 233, 225, 0.25);
     font-size: 0.875rem;
@@ -233,11 +255,28 @@ footer p {
 }
 
 footer a {
+    padding: 0.25rem 0;
     color: #b9ff39;
     border-bottom: 1px solid #b9ff39;
 }
 
-/*animation*/
+
+@media (hover: hover) {
+    .arch:hover {
+        transform: translateY(-0.5rem);
+        border-color: #39fff5;
+        box-shadow: 0 0 2.5rem rgba(57, 255, 245, 0.45);
+    }
+
+    li a:hover {
+        transform: translateX(0.5rem);
+        color: #39fff5;
+        border-color: #39fff5;
+    }
+}
+
+/* animation */
+
 @keyframes rise {
     from { opacity: 0; transform: translateY(60%) scaleY(1.3); }
 }
@@ -254,7 +293,7 @@ footer a {
 }
 
 @keyframes float {
-    to { transform: translateY(24px); }
+    to { transform: translateY(16px); }
 }
 
 @keyframes spin {
@@ -263,4 +302,146 @@ footer a {
 
 @keyframes pulse {
     50% { opacity: 0.25; transform: rotate(45deg) scale(0.6); }
+}
+
+/* TABLET / APP */
+
+@media (min-width: 600px) {
+    #container {
+        padding: 0 2rem;
+    }
+
+    h1 {
+        font-size: 3.25rem;
+    }
+
+    header h2 {
+        font-size: 0.75rem;
+        letter-spacing: 0.1em;
+    }
+
+    #banner {
+        height: 230px;
+    }
+
+    .arch {
+        height: 130px;
+    }
+
+    .tall {
+        height: 180px;
+    }
+
+    .arch img {
+        height: 180px;
+    }
+
+    main {
+        grid-template-columns: 1fr 1fr;
+        gap: 2rem 2.5rem;
+    }
+}
+
+/* DESKTOP */
+
+@media (min-width: 900px) {
+    #container {
+        padding: 0 50px;
+    }
+
+    h1 {
+        font-size: 4rem;
+        line-height: 0.9;
+        text-shadow: -3px 0 #ff4fc3, 3px 0 #3fe3ff, 0 0 2rem rgba(101, 59, 255, 0.5);
+    }
+
+    header h2 {
+        font-size: 0.85rem;
+    }
+
+    #banner {
+        gap: 1rem;
+        height: 250px;
+        padding: 0;
+    }
+
+    .arch {
+        height: 160px;
+    }
+
+    .tall {
+        height: 230px;
+    }
+
+    .arch img {
+        width: calc(300% + 2rem);
+        height: 230px;
+    }
+
+    .tall img {
+        left: calc(-100% - 1rem);
+    }
+
+    .last img {
+        left: calc(-200% - 2rem);
+    }
+
+    .arch::after {
+        top: 12px;
+        left: 12px;
+        right: 12px;
+    }
+
+    .moon {
+        top: 40px;
+        left: 12%;
+        width: 70px;
+        height: 70px;
+    }
+
+    .ring {
+        top: 15px;
+        left: -25px;
+        width: 120px;
+        height: 40px;
+    }
+
+    .star {
+        top: 40px;
+        right: 14%;
+        width: 14px;
+        height: 14px;
+    }
+
+    @keyframes float {
+        to { transform: translateY(24px); }
+    }
+
+    main {
+        grid-template-columns: repeat(4, 1fr);
+        gap: 1.5rem;
+        padding: 0.75rem 0 1rem;
+    }
+
+    main section {
+        padding-left: 0;
+        border-left: 0;
+    }
+
+    main h2 {
+        font-size: 2.2rem;
+    }
+
+    li a {
+        padding: 0.4rem 0;
+    }
+
+    footer {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    footer a {
+        padding: 0;
+    }
 }
