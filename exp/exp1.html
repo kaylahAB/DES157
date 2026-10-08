@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Experiment 1</title>
+</head>
+<body>
+    <h1>Experiment 1</h1>
+    <h2>Open the browser console (F12 or go to settings > more tools > Developers tools > Console) see the code.</h2>
+
+    <script>
+        let originalString2 = "hello world! this is a test";
+        console.log("\n - Reverse Letters in Each Word Expiriment - ");
+        console.log("Original string:");
+        console.log(originalString2);
+
+        let words2 = originalString2.split(" ");
+        let reversedWords = [];
+
+        for (let i = 0; i < words2.length; i++) {
+            let word = words2[i];
+            let reversedWord = "";
+
+            if (word.length > 0) {
+                for (let j = word.length - 1; j >= 0; j--) {
+                    reversedWord = reversedWord + word.charAt(j);
+                }
+            }
+            reversedWords.push(reversedWord);
+        }
+        let resultString2 = reversedWords.join(" ");
+        console.log("Reversed letters (words stay in order):");
+        console.log(resultString2);
+    </script>
+</body>
+</html>
