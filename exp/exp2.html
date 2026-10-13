@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Color Mixer</title>
+	<style>
+		body {
+			font-family: 'Times New Roman', Times, serif;
+            text-align: center;
+            padding: 100px 40px;
+			line-height: 1.5em;
+			background: #faf9f9;
+			color: #000000;
+			margin: 0;
+		}
+
+        .card {
+	        background: white;
+	        border-radius: 8px;
+	        padding: 50px 60px;
+	        margin: 0 auto 15px auto;
+	        max-width: 800px;
+	        font-size: 1.6em;
+            }
+
+        h1 {
+	        text-align: center;
+	        font-size: 2.5em;
+        }
+
+	</style>
+</head>
+ 
+<body>
+	<main class="card">
+		<h1>Color Mixer</h1>
+		<p id="message">Refresh the page to mix again!</p>
+	</main>
+ 
+	<script>
+		var recipes = [
+			["red", "blue", "purple"],
+			["red", "yellow", "orange"],
+			["blue", "yellow", "green"],
+			["red", "white", "pink"],
+			["black", "white", "gray"],
+			["blue", "white", "lightblue"],
+			["red", "green", "brown"]
+		];
+ 
+		function mixColors(color1, color2) {
+			for (var i = 0; i < recipes.length; i++) {
+				if (recipes[i][0] === color1 && recipes[i][1] === color2) {
+					return recipes[i][2];
+				} else if (recipes[i][0] === color2 && recipes[i][1] === color1) {
+					return recipes[i][2];
+				}
+			}
+			return "";
+		}
+ 
+		function runMixer() {
+			var color1 = prompt("Enter the first color:", "");
+			var color2 = prompt("Enter the second color:", "");
+ 
+			color1 = color1.toLowerCase();
+			color2 = color2.toLowerCase();
+ 
+			var result = mixColors(color1, color2);
+			var message = document.querySelector('#message');
+ 
+			if (result === "") {
+				message.innerHTML = `I don't know how to mix ${color1} and ${color2}. Refresh to try again!`;
+			} else {
+				message.innerHTML = `${color1} + ${color2} = ${result}`;
+				document.body.style.backgroundColor = result;
+			}
+		}
+ 
+		runMixer();
+	</script>
+</body>
+<footer> <a href="../index.html">&larr; Back to my portal</a> </footer>
+</html>
+ 
