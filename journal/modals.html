@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Best Practices for Modals and Overlays | Learning Journal</title>
+  <meta name="description" content="Reflection on best practices for modals, overlays, and dialog windows.">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,700;1,400&family=Inter:wght@500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+  <header class="site-header">
+    <h1>Learning Journal</h1>
+    <p class="tagline">Notes on what I'm reading, making, and noticing.</p>
+    <nav aria-label="Main">
+      <a href="index.html"> All posts</a> ·
+      <a href="../index.html">Portal</a>
+    </nav>
+  </header>
+
+  <main>
+
+    <article>
+      <header>
+        <h2>Best Practices for Modals and Overlays</h2>
+        <p class="meta"><time datetime="2026-10-18">October 18, 2026</time></p>
+      </header>
+
+      <p>After reading Naema Baskanderi’s “Best Practices for Modals / Overlays / Dialog Windows,” I realized how easily this pattern can shift from helpful to disruptive. 
+        Baskanderi notes that modals began as an elegant way to simplify interfaces and preserve screen space. I initally found them helpful, since they appear with a goal 
+        or information, but I argree with her argument that overuse has led to users to dismiss them almost 
+        automatically or be assumed as an unpurposful pop-up window. The article’s strongest point is that a modal should only appear when it genuinely serves one of four 
+        purposes: capturing attention for something critical, collecting necessary input, showing contextual information, or presenting independent content. Using them for 
+        error or success messages, she argues, is noise and a misuse that belongs on the page itself.</p>
+
+      <p>What I found most interesting were the emphasis on a clear exit; a cancel button or an escape key these are mentioned to be the practical requirements for a well-built modal, 
+        a descriptive title that matches the triggering action that is good sizing so the modal never overwhelms the screen. This made me reflect to be more intentional about asking 
+        whether a modal is truly needed or if a simpler, non-modal approach would better respect the user’s flow and not be disruptive during their browsing journey.</p>
+
+      <p>Source: <a href="https://uxplanet.org/best-practices-for-modals-overlays-dialog-windows-c00c66cddd8c">Best Practices for Modals / Overlays / Dialog Windows</a> by Naema Baskanderi</p>
+    </article>
+
+  </main>
+
+  <footer class="site-footer">
+    <p>DES 157A Fall 2026 — Kaylah Allison-Ball</p>
+  </footer>
+</body>
+
+</html>
