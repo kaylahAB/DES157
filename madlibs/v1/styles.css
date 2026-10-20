@@ -1,0 +1,272 @@
+body {
+  background-color: #12130f;         
+  color: #d6d0bc;                     
+  font-family: "Crimson Pro", Georgia, serif;
+  font-size: 1.1rem;
+}
+
+h1, h2, legend, button, input[type="submit"] {
+  font-family: Cinzel, Georgia, serif;
+  font-weight: 400;
+}
+
+header {
+  display: flex;
+  flex-wrap: wrap;                   
+  flex-direction: column;             
+  align-items: center;
+  gap: 0.4rem;
+  padding: 1rem;
+  text-align: center;
+}
+
+header h1 {
+  margin: 0;
+  font-size: 1.6rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+header p {
+  margin: 0;
+  color: #c1a568;                    
+  font-style: italic;
+}
+
+/* Picture */
+header img {
+  animation: spin 120s linear infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+
+/* The Form */
+form {
+  display: grid;                      
+  gap: 0.8rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+  animation: fade-in 0.8s ease;      
+}
+
+@keyframes fade-in {
+  from { opacity: 0; transform: translateY(12px); }
+}
+
+fieldset {
+  margin: 0;
+  padding: 0.8rem 1rem;
+  border: 1px solid #4a4333;
+  background-color: #1b1c16;
+}
+
+legend {
+  padding: 0 0.5rem;
+  color: #9b8150;                    
+  font-size: 0.8rem;
+  letter-spacing: 0.1em;
+}
+
+/* Buttons */
+button,
+input[type="submit"] {
+  padding: 0.9rem 1.6rem;
+  background-color: #12130f;
+  border: 1px solid #9b8150;
+  color: #d9d1ba;
+  font-size: 0.75rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: 0.25s;
+}
+
+button:hover,
+input[type="submit"]:hover,
+input[type="submit"]:focus {
+  background-color: #9b8150;
+  color: #12130f;
+}
+
+/* Buttons Effects*/
+input[type="radio"] {
+  position: absolute;
+  opacity: 0;
+}
+
+input[type="radio"] + label {
+  display: inline-block;
+  margin: 0 0.3rem 0.4rem 0;
+  padding: 0.5rem 0.9rem;             
+  border: 1px solid #4a4333;
+  color: #afa996;
+  cursor: pointer;
+  transition: 0.25s;                  
+}
+
+input[type="radio"] + label:hover {
+  border-color: #9b8150;
+}
+
+input[type="radio"]:checked + label {
+  border-color: #9b8150;
+  background-color: #3a3322;
+  color: #c1a568;
+}
+
+input[type="radio"]:focus + label {
+  outline: 1px solid #c1a568;
+  outline-offset: 3px;
+}
+
+/* Text Inputs */
+fieldset p {
+  margin: 0 0 0.4rem;
+}
+
+fieldset p label {
+  display: block;
+  color: #b8b29f;
+}
+
+input[type="text"] {
+  width: 100%;
+  padding: 0.3rem 0;
+  background-color: transparent;
+  border: 0;
+  border-bottom: 1px solid #5f5438;   
+  color: #c1a568;
+  font-family: "Crimson Pro", Georgia, serif;
+  font-size: 1.1rem;
+  font-style: italic;
+  transition: 0.25s;
+}
+
+input[type="text"]::placeholder {
+  color: #555349;
+  font-size: 0.9rem;
+}
+
+input[type="text"]:focus {
+  outline: 1px dashed #9b8150;
+  outline-offset: 3px;
+  border-bottom-color: #c1a568;
+  background-color: #26241b;
+  box-shadow: 0 6px 14px -6px #c1a568;
+}
+
+/* Codex Screen*/
+section {
+  display: none;
+  position: fixed;                   
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  padding: 1rem;
+  overflow: auto;
+  background-color: #0b0c0a;
+}
+
+section.show {
+  display: grid;
+  animation: fade-in 0.6s ease;
+}
+
+article {
+  max-width: 720px;
+  margin: auto;                     
+  padding: 1.2rem;
+  border: 1px solid #4a4333;
+  background-color: #171812;
+  text-align: center;
+}
+
+article h2 {
+  margin: 0.6rem 0 1rem;
+  font-size: 2rem;
+}
+
+article p {
+  font-size: 1.15rem;
+  line-height: 1.7;
+  text-align: left;
+}
+
+strong {
+  color: #d3b978;
+  font-weight: 400;
+  text-decoration: underline;
+  animation: appear 0.9s ease;        
+}
+
+@keyframes appear {
+  from { opacity: 0; }
+}
+
+
+/* Footer */
+footer {
+  padding: 1rem;
+  text-align: center;
+  font-size: 0.9rem;
+  font-style: italic;
+  color: #67655a;
+}
+
+footer p {
+  margin: 0;
+}
+
+
+/* Screen Responsive */
+@media (min-width: 600px) {
+
+  header {
+    flex-direction: row;
+    gap: 1rem;
+  }
+
+  header h1 {
+    font-size: 2rem;
+  }
+
+  #words {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0 1.5rem;
+  }
+
+  input[type="submit"] {
+    justify-self: center;
+  }
+}
+
+@media (min-width: 900px) {
+
+  article {
+    padding: 2rem;
+  }
+
+  article p {
+    font-size: 1.3rem;
+  }
+
+  form {
+    grid-template-columns: 1fr 1.2fr;
+    align-items: start;
+  }
+
+  #words {
+    grid-column: 2;
+    grid-row: 1 / span 3;
+  }
+
+  input[type="submit"] {
+    grid-column: 1 / -1;
+  }
+}
