@@ -1,0 +1,358 @@
+/* Landing page*/
+html {
+  scroll-behavior: smooth;            
+}
+
+body {
+  margin: 0;
+  background-color: #0b0c0a;          
+  color: #d6d0bc;                     
+  font-family: "Crimson Pro", Georgia, serif;
+  font-size: 1.1rem;
+}
+
+h1, h2, legend, button, input[type="submit"] {
+  font-family: Cinzel, Georgia, serif;
+  font-weight: 400;
+}
+
+h1 {
+  margin: 0.3rem 0;
+  font-size: 8rem;
+  letter-spacing: 0.05em;
+}
+
+/* picture spin spin */
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+section {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1rem;
+}
+
+
+/* The Threshold */
+#threshold {
+  min-height: calc(600px - 10px); 
+  text-align: center;
+}
+
+#threshold > p:first-child {
+  margin-top: 2rem;
+  color: #c1a568;
+  font-size: 0.8rem;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+}
+
+#threshold img {
+  animation: spin 120s linear infinite;
+}
+
+#threshold h1 {
+  font-size: 3rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+#threshold h1 span {
+  display: block;
+  color: #c1a568;                    
+  font-size: 1.4rem;
+  letter-spacing: 0.4em;
+}
+
+#threshold hr {
+  width: 200px;
+  border: 0;
+  border-top: 1px solid #9b8150;
+}
+
+#threshold > p:nth-of-type(2) {
+  max-width: 480px;
+  margin: 1rem auto 1.5rem;
+  color: #b8b2a1;
+  font-size: 1.2rem;
+  font-style: italic;
+  line-height: 1.5;
+}
+
+#threshold a {
+  display: inline-block;
+  padding: 0.8rem 1.6rem;
+  border: 1px solid #9b8150;
+  color: #d9d1ba;
+  font-size: 0.75rem;
+  letter-spacing: 0.15em;
+  text-decoration: none;
+  text-transform: uppercase;
+  transition: 0.25s;
+}
+
+#threshold a:hover {
+  background-color: #9b8150;
+  color: #0b0c0a;
+}
+
+
+/* The Form */
+#scribe h2 {
+  margin: 1rem 0 0.3rem;
+  font-size: 2rem;
+  letter-spacing: 0.05em;
+}
+
+#scribe > p {
+  margin: 0 0 1rem;
+  color: #9b9788;
+}
+
+form {
+  display: grid;                  
+  gap: 0.8rem;
+}
+
+fieldset {
+  margin: 0;
+  padding: 0.8rem 1rem;
+  border: 1px solid #2e2a1f;
+  background-color: #171812;
+}
+
+legend {
+  padding: 0 0.5rem;
+  color: #9b8150;                    
+  font-size: 0.8rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+/* Buttons */
+
+button,
+input[type="submit"] {
+  padding: 0.8rem 1.6rem;
+  background-color: #0e0f0c;
+  border: 1px solid #9b8150;
+  color: #d9d1ba;
+  font-size: 0.75rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: 0.25s;
+}
+
+button:hover,
+input[type="submit"]:hover,
+input[type="submit"]:focus {
+  background-color: #9b8150;
+  color: #0b0c0a;
+}
+
+#revelation {
+  display: none;
+  position: fixed;                 
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 20;
+  max-width: none;
+  margin: 0;
+  overflow: auto;
+  background-color: #0b0c0a;
+  text-align: center;
+}
+
+#revelation.show {
+  display: block;
+  animation: fade-in 0.6s ease;
+}
+
+input[type="radio"] {
+  position: absolute;
+  opacity: 0;
+}
+
+input[type="radio"] + label {
+  display: inline-block;
+  margin: 0 0.3rem 0.4rem 0;
+  padding: 0.4rem 0.9rem;
+  border: 1px solid #3a3426;
+  color: #afa996;
+  cursor: pointer;
+  transition: 0.25s;                 
+}
+
+input[type="radio"] + label:hover {
+  border-color: #9b8150;
+}
+
+input[type="radio"]:checked + label {
+  border-color: #9b8150;
+  background-color: #3a3322;
+  color: #c1a568;
+}
+
+/* Boxes */
+
+fieldset p {
+  margin: 0 0 0.4rem;
+}
+
+fieldset p label {
+  display: block;
+  color: #b8b29f;
+}
+
+input[type="text"] {
+  width: 100%;
+  padding: 0.3rem 0;
+  background-color: transparent;
+  border: 0;
+  border-bottom: 1px solid #5f5438;  
+  color: #c1a568;
+  font-family: "Crimson Pro", Georgia, serif;
+  font-size: 1.1rem;
+  font-style: italic;
+  transition: 0.25s;
+}
+
+input[type="text"]::placeholder {
+  color: #555349;
+  font-size: 0.9rem;
+}
+
+input[type="text"]:focus {
+  outline: 1px dashed #9b8150;
+  outline-offset: 3px;
+  border-bottom-color: #c1a568;
+  background-color: #21221b;
+  box-shadow: 0 6px 14px -6px #c1a568;
+}
+
+@keyframes fade-in {
+  from { opacity: 0; transform: translateY(12px); }
+}
+
+#revelation > p:first-child {
+  margin: 1.5rem 0 0;
+  color: #c1a568;
+  font-size: 0.8rem;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+}
+
+#revelation > p:nth-of-type(2) {
+  margin: 0 0 1rem;
+  color: #9b9788;
+}
+
+#revelation > button {
+  margin: 0 0.3rem 0.6rem;
+}
+
+article {
+  max-width: 810px;
+  margin: 0 auto 1rem;
+  padding: 1.2rem;
+  border: 1px solid #2e2a1f;
+  background-color: #14150f;
+}
+
+article > p:first-child {
+  margin: 0;
+  color: #9b8150;
+  font-size: 0.7rem;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+}
+
+article h2 {
+  margin: 0.5rem 0 1rem;
+  font-size: 1.6rem;
+}
+
+article p {
+  font-size: 1.15rem;
+  line-height: 1.6;
+  text-align: left;
+}
+
+article h2 + p::first-letter {
+  float: left;
+  margin: 0.3rem 0.5rem 0 0;
+  color: #c1a568;
+  font-family: Cinzel, Georgia, serif;
+  font-size: 3.5rem;
+  line-height: 0.7;
+}
+
+article p:last-child {
+  color: #625f55;
+  text-align: right;
+}
+
+strong {
+  color: #d3b978;
+  font-weight: 400;
+  text-decoration: underline;
+  animation: appear 0.9s ease;      
+}
+
+@keyframes appear {
+  from { opacity: 0; }
+}
+
+
+/* footer */
+footer {
+  padding: 1rem;
+  text-align: center;
+  font-size: 0.9rem;
+  font-style: italic;
+  color: #67655a;
+}
+
+footer p {
+  margin: 0;
+}
+
+/* responsive screen */
+@media (min-width: 700px) {
+
+  article {
+    padding: 1.5rem 2rem;
+  }
+
+  article p {
+    font-size: 1.25rem;
+  }
+
+  #words {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0 1.5rem;
+  }
+}
+
+@media (min-width: 900px) {
+
+  form {
+    grid-template-columns: 1fr 1.2fr;
+    align-items: start;
+  }
+
+  #words {
+    grid-column: 2;
+    grid-row: 1 / span 3;
+  }
+
+  input[type="submit"] {
+    grid-column: 1 / -1;
+    justify-self: center;
+  }
+}
