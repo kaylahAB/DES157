@@ -1,0 +1,149 @@
+body {
+  margin: 0;
+  background-color: #000000;
+  color: #f3ece0;
+  font-family: "Work Sans", sans-serif;
+}
+
+/* the paintings */
+main {
+  position: relative;
+  display: flex;
+  justify-content: center;
+}
+
+.container {
+  display: none;
+  position: relative;
+  overflow: hidden;
+}
+
+.container.show {
+  display: block;
+}
+
+#valley { width: 955px; height: 750px; }
+#sky    { width: 924px; height: 750px; }
+#beach  { width: 565px; height: 750px; }
+#cove   { width: 572px; height: 750px; }
+
+img, svg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+img {
+  transition: transform 0.8s;
+}
+
+/* glowing spheres */
+circle {
+  fill: rgba(242, 199, 107, 0.35);
+  stroke: #f2c76b;
+  stroke-width: 3;
+  cursor: help;
+  filter: drop-shadow(0 0 8px #f2c76b);
+  transform-box: fill-box;
+  transform-origin: center;
+  animation: pulse 3s infinite;
+}
+
+@media (hover: hover) {
+  circle:hover {
+    fill: rgba(242, 199, 107, 0.6);
+    animation: none;
+  }
+}
+
+@keyframes pulse {
+  0%   { transform: scale(0.9); }
+  50%  { transform: scale(1.1); }
+  100% { transform: scale(0.9); }
+}
+
+/* zoom!! */
+.valley1 { transform-origin: 70% 45%; transform: scale(3); }
+.valley2 { transform-origin: 52% 17%; transform: scale(3); }
+.valley3 { transform-origin: 14% 62%; transform: scale(3); }
+.valley4 { transform-origin: 12% 91%; transform: scale(3); }
+
+.sky1 { transform-origin: 48% 68%; transform: scale(3); }
+.sky2 { transform-origin: 45% 40%; transform: scale(3); }
+.sky3 { transform-origin: 18% 22%; transform: scale(3); }
+.sky4 { transform-origin: 50% 94%; transform: scale(3); }
+
+.beach1 { transform-origin: 28% 55%; transform: scale(3); }
+.beach2 { transform-origin: 68% 52%; transform: scale(3); }
+.beach3 { transform-origin: 20% 78%; transform: scale(3); }
+.beach4 { transform-origin: 72% 66%; transform: scale(3); }
+
+.cove1 { transform-origin: 30% 25%; transform: scale(3); }
+.cove2 { transform-origin: 66% 52%; transform: scale(3); }
+.cove3 { transform-origin: 28% 72%; transform: scale(3); }
+.cove4 { transform-origin: 86% 82%; transform: scale(3); }
+
+#caption {
+  position: absolute;
+  left: 50%;
+  bottom: 40px;
+  transform: translateX(-50%);
+  width: 360px;
+  padding: 10px 20px 16px 20px;
+  background-color: #f3ece0;
+  color: #1d1a22;
+  border-left: 8px solid #f2c76b;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.4s;
+}
+
+#caption.top {
+  top: 60px;
+  bottom: auto;
+}
+
+#caption.visible {
+  opacity: 1;
+}
+
+#caption h2 {
+  margin: 0.4rem 0;
+  font-family: "Fraunces", serif;
+  font-size: 1.2rem;
+}
+
+#caption p {
+  margin: 0;
+  font-family: "Fraunces", serif;
+  line-height: 1.5;
+}
+
+/* buttons */
+#tabs {
+  position: absolute;
+  top: 12px;
+  left: 0;
+  right: 0;
+  z-index: 5;
+  text-align: center;
+}
+
+#tabs button {
+  margin: 3px;
+  padding: 7px 16px;
+  font-family: "Work Sans", sans-serif;
+  color: #f3ece0;
+  background-color: rgba(29, 26, 34, 0.75);
+  border: 1px solid #f3ece0;
+  border-radius: 20px;
+  cursor: pointer;
+}
+
+#tabs button:hover,
+#tabs button.on {
+  background-color: #f3ece0;
+  color: #1d1a22;
+}
