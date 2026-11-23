@@ -158,3 +158,144 @@ a:focus {
     font-size: 1.75rem;
   }
 }
+
+/* Journal 4 */
+
+.journal-4 {
+  background: #f4f1e8 url("background.svg") center / cover no-repeat fixed;
+  color: #e92590;
+  font-family: "Space Mono", monospace;
+}
+
+.journal-4 .vertical {
+  position: absolute;
+  z-index: 1;
+  top: 1.5rem;
+  right: 4%;
+  margin: 0;
+  writing-mode: vertical-rl;
+  font-family: "Inter", Arial, sans-serif;
+  font-size: 4rem;
+  font-weight: 700;
+  line-height: 1;
+  text-transform: uppercase;
+  color: #d2e621;
+}
+
+/* header */
+.journal-4 .site-header,
+.journal-4 main {
+  position: relative;
+  z-index: 1;
+  max-width: 46em;
+}
+
+.journal-4 .site-header {
+  padding: 2rem 0 1rem;
+  border-bottom: 0;
+}
+
+.journal-4 h1 {
+  display: inline-block;
+  padding: 0.35rem 0.9rem;
+  border: 1px solid #000000;
+  background: #f4f1e8;
+  font-size: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+.journal-4 .tagline {
+  color: #3c3e3f;
+  font-size: 0.85rem;
+  font-style: normal;
+}
+
+.journal-4 nav {
+  font-family: "Space Mono", monospace;
+}
+
+/* post card with a grid header */
+.journal-4 article {
+  padding: 0 1.5rem 1rem;
+  background: rgba(244, 241, 232, 0.55);
+  border: 1px solid #1a1a1a;
+}
+
+.journal-4 article > header {
+  margin: 0 -1.5rem 1.5rem;
+  padding: 3rem 1.5rem 1.5rem;
+  border-bottom: 1px solid #1a1a1a;
+  background-image:
+    linear-gradient(#1a1a1a 1px, transparent 1px),
+    linear-gradient(90deg, #1a1a1a 1px, transparent 1px);
+  background-size: 40px 40px;
+}
+
+.journal-4 article h2 {
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  border: 1px solid #1a1a1a;
+  background: #f4f1e8;
+  font-size: 2.5rem;
+  line-height: 1.1;
+  text-transform: uppercase;
+}
+
+.journal-4 .meta {
+  display: block;
+  width: fit-content;
+  margin: 0.5rem 0 0;
+  padding: 0.1rem 0.5rem;
+  background: #f4f1e8;
+  font-size: 0.8rem;
+}
+
+.journal-4 p {
+  font-size: 0.95rem;
+  line-height: 1.8;
+  color: #1a1a1a;
+}
+
+.journal-4 a {
+  color: #1a1a1a;
+}
+
+.journal-4 a:hover,
+.journal-4 a:focus {
+  background: #e2318c;
+  color: #fff;
+}
+
+.journal-4 ul {
+  margin: 0 0 1.25rem;
+  font-size: 0.95rem;
+  line-height: 1.8;
+  color: #2895b1;
+}
+
+/* small dictionary-style note */
+.journal-4 .label {
+  max-width: 24em;
+  margin-top: 1.5rem;
+}
+
+.journal-4 .label p {
+  font-family: "Lora", Georgia, serif;
+  font-size: 0.8rem;
+  line-height: 1.4;
+}
+
+.journal-4 .site-footer {
+  margin-top: 3rem;
+}
+
+@media (max-width: 600px) {
+  .journal-4 .vertical {
+    display: none;
+  }
+
+  .journal-4 article h2 {
+    font-size: 1.75rem;
+  }
+}
