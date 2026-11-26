@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Russian Roulette Dice</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Archivo:wght@400;700&family=Special+Elite&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="styles.css">
+  <script src="script.js" defer></script>
+</head>
+
+<body>
+  <header>
+    <h1>Dice & Roulette</h1>
+    <p>
+      One bullet. Six chambers. Roll the dice and see who is still standing.
+      <strong>Now, it's your turn!</strong>
+    </p>
+  </header>
+
+  <main>
+    <!-- title screen -->
+    <section id="setup">
+      <div class="gun">
+        <div class="frame" aria-hidden="true"></div>
+        <div class="hammer" aria-hidden="true"></div>
+        <div class="grip" aria-hidden="true"></div>
+
+        <div class="wheel" role="group" aria-label="Menu. Arrow keys turn the cylinder, Enter chooses.">
+
+          <button type="button" data-menu="main" data-slot="0" data-info="play"><b>Play</b></button>
+          <button type="button" data-menu="main" data-slot="1" data-info="rules"><b>Rules</b></button>
+          <button type="button" data-menu="main" data-slot="2" data-info="quit"><b>Quit</b></button>
+
+          <button type="button" data-menu="players" data-slot="0" data-players="2" data-info="two" hidden>
+            <b>2</b><small>players</small>
+          </button>
+          <button type="button" data-menu="players" data-slot="1" data-players="3" data-info="three" hidden>
+            <b>3</b><small>players</small>
+          </button>
+          <button type="button" data-menu="players" data-slot="2" data-players="4" data-info="four" hidden>
+            <b>4</b><small>players</small>
+          </button>
+        </div>
+      </div>
+
+        <article data-info="play">
+          <h2>Play</h2>
+          <p>Pull the trigger on a new game. Press Enter to choose how many players.</p>
+        </article>
+
+        <article data-info="rules" hidden>
+          <h2>Rules</h2>
+          <ul>
+            <li>Take turns rolling two dice.</li>
+            <li>Snake eyes (1 and 1): you are blown away.</li>
+            <li>Total of 3 to 5: you are safe.</li>
+            <li>Total of 6 to 12: spin the gun. One shared revolver, one bullet, and every empty click makes the next spin riskier.</li>
+            <li>Last player standing wins!</li>
+          </ul>
+        </article>
+
+        <article data-info="quit" hidden>
+          <h2>Walking away?</h2>
+          <p>Smart move. Close this tab and live to roll another day.</p>
+        </article>
+
+        <article data-info="two" hidden>
+          <h2>2 Players</h2>
+          <p>Red and blue. A quick duel.</p>
+        </article>
+
+        <article data-info="three" hidden>
+          <h2>3 Players</h2>
+          <p>Red, blue and green.</p>
+        </article>
+
+        <article data-info="four" hidden>
+          <h2>4 Players</h2>
+          <p>Red, blue, green and yellow. Full table.</p>
+        </article>
+
+        <button type="button" id="back" hidden>← Back</button>
+      </section>
+    </section>
+
+    <!-- game table -->
+    <section id="table" hidden>
+      <h2>The Table</h2>
+
+      <ul id="players">
+        <li data-color="red" class="active">
+          <img src="images/redA.svg" width="100" height="160" alt="Red player">
+          <span>Red</span>
+        </li>
+        <li data-color="blue">
+          <img src="images/blueA.svg" width="100" height="160" alt="Blue player">
+          <span>Blue</span>
+        </li>
+        <li data-color="green">
+          <img src="images/greenA.svg" width="100" height="160" alt="Green player">
+          <span>Green</span>
+        </li>
+        <li data-color="yellow">
+          <img src="images/yellowA.svg" width="100" height="160" alt="Yellow player">
+          <span>Yellow</span>
+        </li>
+      </ul>
+
+      <section id="arena">
+        <figure id="revolver">
+          <img src="images/revolver.svg" width="272" height="144" alt="A revolver">
+          <figcaption id="chamber">Gun: 1 in 6 chance of the bullet</figcaption>
+        </figure>
+
+        <div id="dice">
+          <img src="images/1die.svg" width="96" height="96" alt="Die showing 1">
+          <img src="images/1die.svg" width="96" height="96" alt="Die showing 1">
+        </div>
+      </section>
+
+      <p id="message" role="status" aria-live="polite">Red, it's your turn.</p>
+
+      <div id="actions">
+        <button type="button">Roll the dice</button>
+      </div>
+
+      <button type="button" id="quit">Quit Game</button>
+    </section>
+  </main>
+
+  <footer>
+    <p>Russian Roulette Dice — a DES 157 Game On! project.</p>
+  </footer>
+</body>
+</html>
